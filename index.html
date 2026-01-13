@@ -356,21 +356,37 @@
         }
 
         .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             gap: 3rem;
-            align-items: start;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .about-image {
             position: relative;
+            width: 100%;
+            max-width: 300px;
         }
 
         .about-img-wrapper {
             background: #FFFFFF;
             border-radius: 20px;
-            padding: 2rem;
+            padding: 0;
             position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .about-img-wrapper::before {
@@ -567,9 +583,16 @@
         }
 
         .skill-category {
-            background: var(--background);
-            border-radius: 20px;
-            padding: 2rem;
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-4px);
         }
 
         .skill-category-header {
@@ -972,39 +995,6 @@
                 padding: 0.75rem 1.5rem;
                 font-size: 0.9rem;
             }
-
-            .fade-in {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-
-            .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-            }
-
-            .bounce-in {
-            opacity: 0;
-            transform: scale(0.3);
-            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-
-            .bounce-in.visible {
-            opacity: 1;
-            transform: scale(1);
-            }
-
-            .slide-bounce {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-
-            .slide-bounce.visible {
-            opacity: 1;
-            transform: translateX(0);
-            }
         }
     </style>
 </head>
@@ -1033,7 +1023,7 @@
         <div class="hero-container">
             <div class="hero-content">
                 <span class="hero-greeting">Hello</span>
-                <h1 class="hero-name">I'm <span class="hero-nickname">Khing</span></h1>
+                <h1 class="hero-name">I'm <span class="hero-nickname">Phitchaya Chanavong</span></h1>
                 <h2 class="hero-title">Computer Science Undergraduate Student</h2>
                 <p class="hero-description">
                     I'm passionate about web development, both front-end and back-end. I'm eager to learn new technologies and continuously improve my skills to become a professional developer.
@@ -1062,32 +1052,34 @@
             <div class="about-grid">
                 <div class="about-image fade-in">
                     <div class="about-img-wrapper">
-                        <div class="personal-info-card">
-                            <div class="info-item">
-                                <span class="info-label">Full Name</span>
-                                <span class="info-value">Phitchaya Chanavong</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">Nickname</span>
-                                <span class="info-value">Khing</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">Date of Birth</span>
-                                <span class="info-value">February 15, 2004</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">University</span>
-                                <span class="info-value">Rajamangala University of Technology Thanyaburi</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">Major</span>
-                                <span class="info-value">Computer Science</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-label">Year</span>
-                                <span class="info-value">3rd Year</span>
-                            </div>
-                        </div>
+                        <!-- เปลี่ยน src เป็น path ของรูปภาพคุณ -->
+                        <img src="your-photo.jpg" alt="Phitchaya Chanavong">
+                    </div>
+                </div>
+                <div class="personal-info-card fade-in">
+                    <div class="info-item">
+                        <span class="info-label">Full Name</span>
+                        <span class="info-value">Phitchaya Chanavong</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Nickname</span>
+                        <span class="info-value">Khing</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Date of Birth</span>
+                        <span class="info-value">February 15, 2004</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">University</span>
+                        <span class="info-value">Rajamangala University of Technology Thanyaburi</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Major</span>
+                        <span class="info-value">Computer Science</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Year</span>
+                        <span class="info-value">3rd Year</span>
                     </div>
                 </div>
                 <div class="about-text fade-in">
@@ -1362,7 +1354,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Phitchaya Chanavong. All rights reserved.</p>
+                <p>&copy; 2025 Phitchaya Chanavong. All rights reserved.</p>
             </div>
         </div>
     </footer>
